@@ -1,0 +1,128 @@
+.preferences-page {
+  width: 100%;
+  box-sizing: border-box;
+  padding: clamp(28px, 6vw, 72px) 20px;
+}
+
+.preferences-form {
+  display: grid;
+  gap: 28px;
+  width: min(100%, 680px);
+  margin: 0 auto;
+  text-align: left;
+}
+
+.preferences-heading {
+  text-align: center;
+}
+
+.preferences-heading h1 {
+  margin: 0 0 12px;
+  font-size: clamp(30px, 5vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -1.2px;
+}
+
+.preferences-heading p {
+  color: var(--text);
+  font-size: 16px;
+}
+
+.preference-group {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.preference-group legend {
+  margin-bottom: 12px;
+  color: var(--text-h);
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.preference-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.preference-options--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.preference-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 56px;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg);
+  color: var(--text-h);
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.preference-option:hover {
+  border-color: var(--accent-border);
+}
+
+.preference-option.is-selected {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.preference-option input {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+.preference-option:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.preferences-form > .app-button {
+  justify-self: start;
+}
+
+@media (max-width: 520px) {
+  .preferences-page {
+    padding: 28px 16px 40px;
+  }
+
+  .preferences-form {
+    gap: 24px;
+  }
+
+  .preference-options,
+  .preference-options--two {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .preference-option {
+    min-height: 52px;
+  }
+
+  .preferences-form > .app-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preference-option {
+    transition: none;
+  }
+}

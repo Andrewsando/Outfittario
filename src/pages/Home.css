@@ -1,0 +1,43 @@
+.home-page {
+  display: grid;
+  min-height: min(70vh, 640px);
+  place-items: center;
+  box-sizing: border-box;
+  padding: clamp(32px, 8vw, 80px) 20px;
+}
+
+.home-content {
+  width: min(100%, 680px);
+}
+
+.home-content h1 {
+  margin: 0 0 28px;
+  font-size: clamp(40px, 8vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.home-actions .link-button {
+  min-height: 44px;
+  padding: 10px 18px;
+}
+
+@media (max-width: 420px) {
+  .home-page {
+    min-height: 60vh;
+    padding-inline: 20px;
+  }
+
+  .home-actions {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
